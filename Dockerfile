@@ -32,7 +32,8 @@ RUN apt-get update && \
     conda install -y  -c conda-forge findspark && \
     wget http://apache.mirror.amaze.com.au/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz && \
     tar xvf spark-2.4.4-bin-hadoop2.7.tgz && \
-    ln -s spark-2.4.4-bin-hadoop2.7 spark
+    ln -s spark-2.4.4-bin-hadoop2.7 spark && \
+    rm -rf spark-2.4.4-bin-hadoop2.7.tgz
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "/bin/bash" ]
